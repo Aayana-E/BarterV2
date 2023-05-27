@@ -1,24 +1,22 @@
-import React from 'react'
-import PreLoggedIn from './PreLoggedIn'
-
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { HeroText, HomeBack } from '../styles/homestyle';
-
-
+import React from 'react';
+import PreLoggedIn from './PreLoggedIn';
+import { HomeBack } from '../styles/homestyle';
+import TypedHeroText from './TypedHeroText';
 
 function Home() {
+  const firstLine = "Exchange, Connect, Thrive: ";
+  const secondLine = "Baarter Your Way!";
+  const typingDelay = 100;
+
   return (
     <>  
       <PreLoggedIn></PreLoggedIn>
-
       <HomeBack>
-            <HeroText>Exchange, Connect, Thrive:</HeroText>
-            <HeroText> Barter Your Way!</HeroText>
+        <TypedHeroText text={firstLine} />
+        <TypedHeroText text={secondLine} delay={firstLine.length * typingDelay} />
       </HomeBack>
     </>
-    
-   
   )
 }
 
-export default Home
+export default Home;
