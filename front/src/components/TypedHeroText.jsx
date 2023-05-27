@@ -3,7 +3,7 @@ import { HeroText } from '../styles/homestyle';
 
 const TypedHeroText = ({ text, delay = 0 }) => {
   const [content, setContent] = useState('');
-  const typingDelay = 100;
+  const typingDelay = 80;
 
   useEffect(() => {
     let i = 0;
