@@ -8,6 +8,8 @@ width: 100%;
 background-color: #609966;
 display: flex;
 flex-direction: row;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
 `;
 
 export const LoginButton = styled(Link)`
