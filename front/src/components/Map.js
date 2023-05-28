@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import PostLoggedIn from './PostLoggedIn';
-import LoggedIn from './LoggedIn';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import LoggedIn from './LoggedIn';
 
 function Map() {
   const mapStyles = {
@@ -40,8 +39,9 @@ function Map() {
 
   return (
     <div>
-      <LoggedIn />
-      <h1>Map</h1>
+     
+      <LoggedIn></LoggedIn>
+      
       <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
           {markers.map(marker => (
