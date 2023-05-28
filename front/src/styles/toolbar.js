@@ -25,7 +25,7 @@ color: black;
 border-radius: 5px;
 transition: all ease 0.1s;
 box-shadow: 0px 5px 0px 0px #9DC08B;
-width: 60px;
+width: 65px;
 height: 20px;
 margin-top: 10px;
 margin-right: 15px;

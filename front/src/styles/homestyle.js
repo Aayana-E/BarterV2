@@ -20,6 +20,14 @@ display: flex;
 position: relative;
 color: #343231;
 `
+export const HeroSubText = styled.text`
+font-size: 30px;
+font-family: 'Open Sans', sans-serif;
+font-weight: 600;
+display: flex;
+position: relative;
+color: #343231;
+`
 export const TextContainer = styled.div`
 flex-direction: column;
 display: flex;
