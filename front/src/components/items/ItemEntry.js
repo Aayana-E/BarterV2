@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
 
 export default function ItemEntry() {
-  console.log(db);
-  useEffect(() => {
-    foo();
-  }, []);
+  useEffect(() => {}, []);
 
-  const foo = async () => {
-    console.log("hi");
-    const querySnapshot = await getDocs(collection(db, "items"));
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
-    });
-  };
+  // const foo = async () => {
+  //   console.log("hi");
+  //   const querySnapshot = await getDocs(collection(db, "items"));
+  //   querySnapshot.forEach((doc) => {
+  //     console.log(`${doc.id} => ${doc.data()}`);
+  //   });
+  // };
 
   const formStyles = {
     display: "flex",
