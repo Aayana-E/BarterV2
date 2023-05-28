@@ -41,7 +41,7 @@ function Map() {
     <div>
      
       
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+      <LoadScript googleMapsApiKey="AIzaSyAEitHcEmeRYqt8JuON5u3vGup9haSaBqU">
         <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
           {markers.map(marker => (
             <Marker
