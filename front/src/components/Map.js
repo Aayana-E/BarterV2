@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, MarkerF } from '@react-google-maps/api';
 import LoggedIn from './LoggedIn';
+
 
 function Map() {
   const mapStyles = {
@@ -15,7 +16,7 @@ function Map() {
 
   const markers = [
     { id: 1, position: { lat: 40.7128, lng: -74.0060 }, title: 'New York' },
-    { id: 2, position: { lat: 40.7041, lng: -74.0092 }, title: 'Statue of Liberty' },
+    { id: 2, position: { lat: 40.689247, lng: -74.044502 }, title: 'Statue of Liberty' },
     { id: 3, position: { lat: 40.7589, lng: -73.9851 }, title: 'Empire State Building' },
   ];
 
@@ -44,7 +45,7 @@ function Map() {
       <LoadScript googleMapsApiKey="AIzaSyAEitHcEmeRYqt8JuON5u3vGup9haSaBqU">
         <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
           {markers.map(marker => (
-            <Marker
+            <MarkerF
               key={marker.id}
               position={marker.position}
               title={marker.title}
