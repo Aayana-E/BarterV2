@@ -10,10 +10,14 @@ import Map from "./components/Map";
 import Signup from "./components/Signup";
 import AllAndEntry from "./components/items/AllAndEntry";
 import Chat from "./components/chat";
+import LoadNavOnAuth from "./components/LoadNavOnAuth";
+
+
 function App() {
   return (
     <>
       <div>
+        <LoadNavOnAuth/>
         <AuthContextProvider>
           <Routes>
             <Route path="/" element={<Home />} />

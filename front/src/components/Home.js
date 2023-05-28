@@ -13,7 +13,6 @@ function Home() {
 
   return (
     <>  
-      <PreLoggedIn></PreLoggedIn>
       <HomeBack>
         <TextContainer>
 

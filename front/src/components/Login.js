@@ -62,7 +62,6 @@ const Login = () => {
 
   return (
     <div>        
-      <PreLoggedIn />
 
       <HomeBack>
         <HeroSubText>Login</HeroSubText>

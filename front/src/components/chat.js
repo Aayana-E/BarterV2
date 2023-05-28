@@ -60,7 +60,6 @@ const Chat = () => {
 
     return (
         <div>
-            <LoggedIn></LoggedIn>
             <br/>
             <div>
                 {messages.map((message, i) => (

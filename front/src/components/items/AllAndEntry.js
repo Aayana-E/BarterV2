@@ -32,7 +32,6 @@ export default function AllAndEntry() {
         paddingBottom: "200px",
       }}
     >
-      <LoggedIn />
       <ItemEntryContainer pushItem={pushItem} />
       <AllItems items={items} />
     </div>

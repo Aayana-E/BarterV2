@@ -33,7 +33,6 @@ const Signup = () => {
 
   return (
     <div>
-      <PreLoggedIn></PreLoggedIn>
       <HomeBack>
           <HeroSubText>Sign Up</HeroSubText>
       <form onSubmit={handleSignUp}>

@@ -4,16 +4,8 @@ import logo from '../photos/barterlogo.png'
 import { UserAuth } from './firebase/AuthContext';
 
 const LoggedIn = () => {
-  const { logOut, user } = UserAuth();
 
-  const handleLogout = async () => {
-    try {
-      await logOut();
-      console.log('Logged out successfully');
-    } catch (error) {
-      console.error('Failed to log out', error);
-    }
-  };
+  
   return (
     <AllContainer>
 
@@ -29,11 +21,8 @@ const LoggedIn = () => {
 
       </LeftContainer>
                                                             <RightContainer>
-                                                            {user ? (
-          <LoginButton onClick={handleLogout}>Sign Out</LoginButton>
-        ) : (
-          <LoginButton to="/login">Sign In</LoginButton>
-        )}
+          <LoginButton to="/">Sign Out</LoginButton>
+        
                                                             </RightContainer>
 
     </AllContainer>
