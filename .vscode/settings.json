@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/b8c7b151-0667-43bf-9c96-54e336718a32/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/BarterV2",
+    "appService.deploySubpath": "."
+}
