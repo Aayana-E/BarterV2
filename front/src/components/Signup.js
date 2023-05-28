@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { UserAuth } from "./firebase/AuthContext";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase/firebase-config";
+import PreLoggedIn from './PreLoggedIn';
+import { HeroSubText, HomeBack } from '../styles/homestyle';
+import { InputContainer, Input, Label, Underline, StyledButton } from '../styles/loginstyle'; // import styled components
+
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -29,18 +33,23 @@ const Signup = () => {
 
   return (
     <div>
-      <h1>Signup</h1>
+      <PreLoggedIn></PreLoggedIn>
+      <HomeBack>
+          <HeroSubText>Sign Up</HeroSubText>
       <form onSubmit={handleSignUp}>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} required />
-        </label>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={handlePasswordChange} required />
-        </label>
-        <button type="submit">Sign Up</button>
+      <InputContainer>
+          <Input type="email" id="input" value={email} onChange={handleEmailChange} required />
+          <Label for="input">Email</Label>
+          <Underline />
+        </InputContainer>
+        <InputContainer>
+          <Input type="password" id="input" value={password} onChange={handlePasswordChange} required />
+          <Label for="input">Password</Label>
+          <Underline />
+        </InputContainer>
+        <StyledButton type="submit">Sign Up</StyledButton>
       </form>
+      </HomeBack>
     </div>
   );
 };
