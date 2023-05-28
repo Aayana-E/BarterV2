@@ -1,10 +1,10 @@
 import React from "react";
 import ItemEntry from "./ItemEntry";
 
-export default function ItemEntryContainer() {
+export default function ItemEntryContainer({ pushItem }) {
   return (
     <div>
-      <ItemEntry />
+      <ItemEntry pushItem={pushItem} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
 
-export default function ItemEntry() {
+export default function ItemEntry({ pushItem }) {
   const [success, setSuccess] = useState(false);
   const formStyles = {
     display: "flex",
@@ -33,8 +33,9 @@ export default function ItemEntry() {
       description,
       expire,
     };
-    addDoc(collection(db, "items"), item);
-
+    const docRef = addDoc(collection(db, "items"), item);
+    //push it onto state
+    pushItem(item);
     setSuccess(true);
   };
 
