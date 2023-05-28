@@ -12,9 +12,7 @@ function PreLoggedIn(){
              <LogoLink to="/">
                 <Logo src={logo}></Logo>
             </LogoLink>
-
             <AboutLink to="/about">About Us</AboutLink>
-
       </LeftContainer>
                                                             <RightContainer>
                                                                        <LoginButton to="/login">Sign In</LoginButton>

@@ -6,7 +6,17 @@ import {GoogleButton} from "react-google-button";
 import { UserAuth } from "./firebase/AuthContext";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import LoggedIn from './LoggedIn'
+import PreLoggedIn from './PreLoggedIn';
+import { HeroText, HomeBack, HeroSubText} from '../styles/homestyle';
+import styled from 'styled-components';
+import { InputContainer, Input, Label, Underline, StyledButton } from '../styles/loginstyle'; // import styled components
 
+const GoogleButtonWrapper = styled.div`
+  margin-top: 20px; 
+  margin-bottom: 25px;
+  justify-content: center;
+  align-items: center;
+`;
 const Login = () => {
 
   //Email and password
@@ -51,24 +61,48 @@ const Login = () => {
   };
 
   return (
-    <div>
-        <h1>Login</h1>
-        <GoogleButton onClick={handleGoogleSignIn} />
-        <h2>Or Sign in with Email</h2>
+    <div>        
+      <PreLoggedIn />
+
+      <HomeBack>
+        <HeroSubText>Login</HeroSubText>
+
+        <GoogleButtonWrapper>
+          <GoogleButton onClick={handleGoogleSignIn} />
+        </GoogleButtonWrapper>
+
+        <GoogleButtonWrapper>            
+          <HeroSubText>Sign In With Email</HeroSubText>
+        </GoogleButtonWrapper>
+
         <form onSubmit={handleEmailSignIn}>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} required />
-        </label>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={handlePasswordChange} required />
-        </label>
-        <button type="submit">Sign In</button>
-        </form>
-        <button onClick={handleSignUp}>Sign Up</button>
+      <GoogleButtonWrapper>
+        <InputContainer>
+          <Input type="email" id="input" value={email} onChange={handleEmailChange} required />
+          <Label for="input">Email</Label>
+          <Underline />
+        </InputContainer>
+      </GoogleButtonWrapper>
+      <GoogleButtonWrapper>
+        <InputContainer>
+          <Input type="password" id="input" value={password} onChange={handlePasswordChange} required />
+          <Label for="input">Password</Label>
+          <Underline />
+        </InputContainer>
+      </GoogleButtonWrapper>
+
+
+{/* BUTTONS */}
+
+      <GoogleButtonWrapper>
+        <StyledButton type="submit">Sign In</StyledButton> 
+      </GoogleButtonWrapper>
+    </form>
+        <StyledButton onClick={handleSignUp}>Sign Up</StyledButton>
+      </HomeBack>
     </div>
   )
 }
 
 export default Login
+
