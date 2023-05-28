@@ -1,8 +1,19 @@
 import React from 'react'
 import { AboutLink, AllContainer, LeftContainer, LoginButton, Logo, LogoLink, RightContainer} from '../styles/toolbar'
 import logo from '../photos/barterlogo.png'
+import { UserAuth } from './firebase/AuthContext';
 
-function LoggedIn() {
+const LoggedIn = () => {
+  const { logOut, user } = UserAuth();
+
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      console.log('Logged out successfully');
+    } catch (error) {
+      console.error('Failed to log out', error);
+    }
+  };
   return (
     <AllContainer>
 
@@ -15,7 +26,11 @@ function LoggedIn() {
 
       </LeftContainer>
                                                             <RightContainer>
-                                                                       <LoginButton to="/login">Sign Out</LoginButton>
+                                                            {user ? (
+          <LoginButton onClick={handleLogout}>Sign Out</LoginButton>
+        ) : (
+          <LoginButton to="/login">Sign In</LoginButton>
+        )}
                                                             </RightContainer>
 
     </AllContainer>

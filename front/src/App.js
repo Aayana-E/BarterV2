@@ -8,6 +8,8 @@ import About from "./components/About";
 import { AuthContextProvider } from "./components/firebase/AuthContext";
 import Map from "./components/Map";
 import Signup from './components/Signup';
+import ChatPage from './components/chat';
+
 function App() {
   return (
     <>
@@ -19,6 +21,7 @@ function App() {
           <Route path="/map" element={<Map/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/about" element={<About/>} />
+          <Route path="/chat" element={<ChatPage/>} />
         </Routes>
 
         </AuthContextProvider>
