@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {GoogleButton} from "react-google-button";
 import { UserAuth } from "./firebase/AuthContext";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
+import LoggedIn from './LoggedIn'
 
 const Login = () => {
 
