@@ -3,16 +3,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
 
 export default function ItemEntry() {
-  useEffect(() => {}, []);
-
-  // const foo = async () => {
-  //   console.log("hi");
-  //   const querySnapshot = await getDocs(collection(db, "items"));
-  //   querySnapshot.forEach((doc) => {
-  //     console.log(`${doc.id} => ${doc.data()}`);
-  //   });
-  // };
-
+  const [success, setSuccess] = useState(false);
   const formStyles = {
     display: "flex",
     flexDirection: "column",
@@ -40,13 +31,15 @@ export default function ItemEntry() {
       condition,
       size,
       description,
+      expire,
     };
-    const docRef = addDoc(collection(db, "items"), item);
-    console.log(item);
+    addDoc(collection(db, "items"), item);
+
+    setSuccess(true);
   };
 
   const categories = ["Clothes", "Food", "Other"];
-  const [selectedCategory, setSelectedCategory] = useState("clothes");
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [itemName, setItemName] = useState("");
   const [condition, setCondition] = useState("New");
   const [size, setSize] = useState("S");
@@ -76,7 +69,7 @@ export default function ItemEntry() {
         </div>
 
         {/* Inputs for clothes */}
-        {selectedCategory === "clothes" && (
+        {selectedCategory === "Clothes" && (
           <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
             <div>
               <h3 style={inputLabelStyles}>Size:</h3>
@@ -107,7 +100,7 @@ export default function ItemEntry() {
         )}
 
         {/* Inputs for foods */}
-        {selectedCategory === "food" && (
+        {selectedCategory === "Food" && (
           <div style={{ display: "flex" }}>
             <h3 style={inputLabelStyles}>Expiration date:</h3>
             <input
@@ -127,6 +120,7 @@ export default function ItemEntry() {
           submit
         </button>
       </form>
+      {success && <div>Item added!</div>}
     </div>
   );
 }

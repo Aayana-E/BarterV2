@@ -26,6 +26,7 @@ export default function AllItems() {
     <div>
       <h2>Want these items?</h2>
       <p>Items available for trade listed below</p>
+      <button onClick={() => getItems()}>Refresh Items</button>
       <div>
         {items?.map((item) => (
           <div
@@ -40,8 +41,8 @@ export default function AllItems() {
             }}
           >
             <div>{item.itemName}</div>
-            <div>{item.category}</div>
-
+            <div style={{ fontStyle: "italic" }}>{item.category}</div>
+            <button>More Details</button>
             <button style={{ color: "white", backgroundColor: "green" }}>
               Request Trade
             </button>
