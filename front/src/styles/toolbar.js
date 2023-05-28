@@ -8,16 +8,12 @@ width: 100%;
 background-color: #609966;
 display: flex;
 flex-direction: row;
-border-bottom-left-radius: 10px;
-border-bottom-right-radius: 10px;
 `;
 
 export const LoginButton = styled(Link)`
 border: none;
 outline: none;
 background-color: whitesmoke;
-font-family: 'Open Sans', sans-serif;
-
 padding: 10px 20px;
 font-size: 16px;
 font-weight: 500;
@@ -25,12 +21,10 @@ color: black;
 border-radius: 5px;
 transition: all ease 0.1s;
 box-shadow: 0px 5px 0px 0px #9DC08B;
-width: 65px;
-height: 20px;
+width: 100px;
+height: 50%;
 margin-top: 10px;
 margin-right: 15px;
-text-decoration: none;
-text-align: center;
 
 &:active {
     transform: translateY(5px);
@@ -66,9 +60,7 @@ export const Logo = styled.img`
 export const AboutLink = styled(Link)`
 text-decoration: none;
 font-size: 18px;
-font-weight: 600;
-
-font-family: 'Open Sans', sans-serif;
+font-weight: 500;
 color: white;
 margin-left: 40px;
 margin-top: 14px;
