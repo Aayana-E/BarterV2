@@ -22,7 +22,10 @@ const LoggedIn = () => {
                 <Logo src={logo}></Logo>
             </LogoLink>
 
-            <AboutLink to="/about">CHANGE THIS TO WHAT U NEED</AboutLink>
+            <AboutLink to="/map">Map</AboutLink>
+            <AboutLink to="/items">Items</AboutLink>
+            <AboutLink to="/chat">Chat</AboutLink>
+
 
       </LeftContainer>
                                                             <RightContainer>
